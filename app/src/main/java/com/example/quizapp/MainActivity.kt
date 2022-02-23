@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var etName: EditText? = null
-    private var themesList: ArrayList<TextView>? = null
     private var tvTheme0: TextView? = null
     private var tvTheme1: TextView? = null
     private var tvTheme2: TextView? = null
