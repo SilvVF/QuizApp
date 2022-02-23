@@ -92,86 +92,64 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <TextView
+        <CheckBox
             android:id="@+id/tvTheme1"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
             android:background="@drawable/default_option_border_bg"
-            android:padding="10dp"
-            android:textColor="@color/green"
             android:gravity="center"
-            android:text="Gaming" />
+            android:text="Gaming"
+            android:textSize="20sp"
+            android:textColor="@color/green" />
 
-        <TextView
+        <CheckBox
             android:id="@+id/tvTheme0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
             android:padding="10dp"
             android:text="Anime"
+            android:textSize="20sp"
+            android:background="@drawable/default_option_border_bg"
             android:textColor="@color/anime_color"
-            android:gravity="center"
+            android:textStyle="bold"
             android:typeface="normal" />
 
-        <TextView
-            android:id="@+id/tvTheme2"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="14dp"
-            android:background="@drawable/default_option_border_bg"
-            android:padding="10dp"
-            android:text="Theme 2" />
-
     </LinearLayout>
+
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+
         android:gravity="center"
         android:orientation="horizontal"
         >
 
-        <TextView
+        <CheckBox
             android:id="@+id/tvTheme3"
             android:layout_weight="1"
             android:background="@drawable/default_option_border_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
+            android:layout_margin="10dp"
             android:text="Theme 3"
-            android:padding="10dp"
             />
-        <TextView
-            android:id="@+id/tvTheme4"
-            android:layout_weight="1"
-            android:background="@drawable/default_option_border_bg"
-            android:layout_margin="14dp"
+
+        <CheckBox
+            android:id="@+id/tvTheme2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Theme 4"
-            android:padding="10dp"
-            />
-        <TextView
-            android:id="@+id/tvTheme5"
-            android:layout_weight="1"
             android:background="@drawable/default_option_border_bg"
-            android:layout_margin="14dp"
-            android:typeface="normal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Theme 5"/>
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Theme 2" />
+
     </LinearLayout>
-    <Button
-        android:id="@+id/btnReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="unselect"/>
 
 </LinearLayout>
