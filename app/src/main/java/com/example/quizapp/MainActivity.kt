@@ -47,6 +47,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         tvTheme3 = findViewById(R.id.tvTheme3)
         tvTheme3?.setOnClickListener(this)
 
+        val ibHistory = findViewById<ImageButton>(R.id.ib_history)
+        ibHistory.setOnClickListener {
+            Intent(this, HistoryActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
 
     }
 
