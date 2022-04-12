@@ -1,9 +1,11 @@
-package com.example.quizapp
+package com.example.quizapp.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.quizapp.data.models.Player
+
 @Database(entities = [Player::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
 
@@ -13,7 +15,7 @@ abstract class AppDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        fun getInstance(context: Context): AppDatabase{
+        fun getInstance(context: Context): AppDatabase {
             synchronized(this){
                 var instance = INSTANCE
                 if (instance == null){

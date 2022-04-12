@@ -1,4 +1,4 @@
-package com.example.quizapp
+package com.example.quizapp.activitys
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
+import com.example.quizapp.R
+import com.example.quizapp.adapters.PlayerApp
+import com.example.quizapp.data.Constants
+import com.example.quizapp.data.models.Player
 import kotlinx.coroutines.launch
-import kotlin.math.roundToInt
 
 class FinalResult : AppCompatActivity() {
     override fun onCreate(savedInstanceState:Bundle?) {
@@ -22,6 +25,7 @@ class FinalResult : AppCompatActivity() {
         val name: String = intent.getStringExtra(Constants.USER_NAME) ?: ""
         val score: Int = ((correctNum.toDouble()/ totalNum.toDouble()) * 100 ).toInt()
 
+        //calculate and store scores at the end of the quiz
         val playerDao = (application as PlayerApp).db.playerDao()
         lifecycleScope.launch {
             playerDao.insert(

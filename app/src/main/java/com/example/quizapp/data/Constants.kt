@@ -1,5 +1,7 @@
-package com.example.quizapp
+package com.example.quizapp.data
 
+import com.example.quizapp.data.models.Question
+import com.example.quizapp.R
 import kotlin.random.Random
 
 object Constants {
@@ -15,94 +17,96 @@ object Constants {
             return getQuestions(listOf(Random.nextInt(0,2)))
         }
         val questionsList = ArrayList<Question>()
+        val network1 = R.drawable.network
+        val network2 = R.drawable.network_two
         if(themeList.contains(0)) {
                 val que1 = Question(
                     id = 0,
-                    question = questionWho,
-                    image = R.drawable.baki,
-                    optionOne = "Ebisu",
-                    optionTwo = "Baki",
-                    optionThree = "Ao",
-                    optionFour = "Hidan",
-                    correctAns = 1,
+                    question = " A type of cryptographic network protocol for secure data communication, remote command-line login, remote command execution, and other secure network services between two networked computers is known as:",
+                    image = network1,
+                    optionOne = "TFTP",
+                    optionTwo = "SSH",
+                    optionThree = "Telnet",
+                    optionFour = "RDP",
+                    correctAns = 2,
                 )
                 questionsList.add(que1)
                 val que2 = Question(
                     id = 1,
-                    question = questionWho,
-                    image = R.drawable.guren,
-                    optionOne = "Hebiichigo",
-                    optionTwo = "Pakura",
-                    optionThree = "Mei",
-                    optionFour = "Guren",
+                    question = "Which of the answers listed below refers to a secure replacement for Telnet?",
+                    image = network1,
+                    optionOne = "CHAP",
+                    optionTwo = "FTP",
+                    optionThree = "SNMP",
+                    optionFour = "SSH",
                     correctAns = 4,
                 )
                 questionsList.add(que2)
 
                 val que3 = Question(
                     id = 2,
-                    question = questionWho,
-                    image = R.drawable.riruka,
-                    optionOne = "Riruka",
-                    optionTwo = "Yoruichi",
-                    optionThree = "Nel",
-                    optionFour = "Orihime",
-                    correctAns = 1,
+                    question = " Which of the following answers refers to a system containing mappings of domain names to various types of data, such as numerical IP addresses?",
+                    image = network2,
+                    optionOne = "TCP/IP",
+                    optionTwo = "DNS",
+                    optionThree = "SQL",
+                    optionFour = "DHCP",
+                    correctAns = 2,
                 )
                 questionsList.add(que3)
                 val que4 = Question(
                     id = 3,
-                    question = questionShow,
-                    image = R.drawable.another,
-                    optionOne = "Naruto",
-                    optionTwo = "Bleach",
-                    optionThree = "Another",
-                    optionFour = "Horimiya",
-                    correctAns = 3,
+                    question = "The SMTP protocol is can be used for:",
+                    image = network1,
+                    optionOne = "Sending email between mail servers",
+                    optionTwo = "Name resolution",
+                    optionThree = "Retrieving email from mail servers",
+                    optionFour = "Name resolution",
+                    correctAns = 1,
                 )
                 questionsList.add(que4)
                 val que5 = Question(
                     id = 6,
-                    question = questionShow,
-                    image = R.drawable.fmasymbol,
-                    optionOne = "Full Metal Alchemist",
-                    optionTwo = "Attack On titan",
-                    optionThree = "Another",
-                    optionFour = "Mob Psycho 100",
-                    correctAns = 1,
+                    question = " A network protocol that allows for secure file transfer over Secure Shell (SSH) is called:",
+                    image = network2,
+                    optionOne = "TFTP",
+                    optionTwo = "SFTP",
+                    optionThree = "Telnet",
+                    optionFour = "FTPS",
+                    correctAns = 2,
                 )
                 questionsList.add(que5)
                 val que6 = Question(
                     id = 4,
-                    question = questionWho,
-                    image = R.drawable.mikey,
-                    optionOne = "Draken",
-                    optionTwo = "Mikey",
-                    optionThree = "Osanai",
-                    optionFour = "Tanjiro",
-                    correctAns = 2,
+                    question = " What is the function of FTP?",
+                    image = network2,
+                    optionOne = "Mail services",
+                    optionTwo = "Serving of web pages",
+                    optionThree = "Directory access",
+                    optionFour = "File exchange",
+                    correctAns = 4,
                 )
                 questionsList.add(que6)
                 val que7 = Question(
                     id = 7,
-                    question = questionShow,
-                    image = R.drawable.naruto_seal,
-                    optionOne = "Tokyo Ghoul",
-                    optionTwo = "Bleach",
-                    optionThree = "Kakgurui",
-                    optionFour = "Naruto",
-                    correctAns = 4,
+                    question = "What are the characteristic features of TFTP?",
+                    image = network2,
+                    optionOne = "Provides no security features",
+                    optionTwo = "Directory access protocol",
+                    optionThree = "Provides authentication and encryption",
+                    optionFour = "Mail service",
+                    correctAns = 1,
                 )
                 questionsList.add(que7)
                 val que8 = Question(
                     id = 8,
-                    question = questionShow,
-                    image = R.drawable.steins_bana,
-                    optionOne = "Steins Gate",
-                    optionTwo = "Your Name",
-                    optionThree = "One Piece",
-                    optionFour = "Food Wars",
-                    correctAns = 1,
+                    question = "A network protocol providing an alternative solution to the manual allocation of IP addresses is known as:",
+                    image = network2,
+                    optionOne = "DNS",
+                    optionTwo = "SNMP",
+                    optionThree = "NAT",
+                    optionFour = "DHCP",
+                    correctAns = 4,
                 )
                 questionsList.add(que8)
             }

@@ -1,4 +1,4 @@
-package com.example.quizapp
+package com.example.quizapp.activitys
 
 import android.content.Intent
 import android.graphics.Color
@@ -9,7 +9,9 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
-import org.w3c.dom.Text
+import com.example.quizapp.R
+import com.example.quizapp.data.Constants
+import com.example.quizapp.data.models.Question
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mQuestionList: ArrayList<Question>?  = null
@@ -65,7 +67,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-
+    //resets selected answer / option to default background
     private fun defaultOptionsView(){
         val options = ArrayList<TextView>()
 
@@ -93,7 +95,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         }
     }
-
+    //sets the background highlight when selected
     private fun selectedOptionView(tv: TextView, selectedOptionNum: Int){
         defaultOptionsView()
 
@@ -106,7 +108,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             R.drawable.selected_option_border_bg,
         )
     }
-
+    //sets the current question being asked and progress based on question pool
     private fun setQuestion() {
         defaultOptionsView()
         val question: Question = mQuestionList!![mCurrentPosition - 1]
@@ -127,13 +129,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             btnSubmit?.text = "Submit"
         }
     }
-
+    // logic for when possible answers are selected highlights them
     override fun onClick(view:View?) {
         when(view?.id){
             R.id.textViewOptionOne -> {
                 Log.i("tv_was_clicked", "onClick: ")
                 tvOp1?.let{
-                    selectedOptionView(it,1)
+                    selectedOptionView(it,1)  // records the selection used when determining if correct
                 }
             }
 
@@ -153,13 +155,15 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
             R.id.btn_submit -> {
+                // allows no answer to be given
                 if(mSelectedOptionPosition == 0) {
                     mCurrentPosition++
 
                     when {
+                        //gives next question if no answer selected
                         mCurrentPosition <= mQuestionList!!.size -> { setQuestion() }
                         else -> {
-                            val intent = Intent(this,FinalResult::class.java)
+                            val intent = Intent(this, FinalResult::class.java)
                             intent.putExtra(Constants.USER_NAME,mUserName)
                             intent.putExtra(Constants.CORRECT_ANSWERS,mCorrectAnswers)
                             intent.putExtra(Constants.TOTAL_QUESTIONS,mQuestionList?.size)
@@ -168,13 +172,15 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 }else{
+                    //logic for showing correct and incorrect responses
                     val question = mQuestionList?.get(mCurrentPosition - 1)
-                    if(question!!.correctAns != mSelectedOptionPosition){
-                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    if(question!!.correctAns != mSelectedOptionPosition){  // compares stored selection position to questions correct position
+                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg) // set red background if incorrect on view selected
                     }else{
                         mCorrectAnswers++
                     }
-                    answerView(question.correctAns, R.drawable.correct_option_border_bg)
+                    answerView(question.correctAns, R.drawable.correct_option_border_bg) // calls function answerView which sets
+                                                                                            // green background on correct answer
                     if(mCurrentPosition == mQuestionList!!.size){
                         btnSubmit?.text = "Finish"
                     }else{
@@ -186,7 +192,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         }
     }
-
+    // logic for setting background colors of possible answers params = ( view to set color on , correct or incorrect background)
     private fun answerView(answer: Int, drawableView: Int){
         when(answer){
             1 -> {

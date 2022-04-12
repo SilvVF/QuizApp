@@ -1,4 +1,4 @@
-package com.example.quizapp
+package com.example.quizapp.activitys
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
+import com.example.quizapp.R
+import com.example.quizapp.data.Constants
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -55,10 +57,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
-
+    //determine question pool being used no selection = random
    override fun onClick(p0:View?) {
        when(p0?.id) {
-           R.id.tvTheme0,R.id.tvTheme1,R.id.tvTheme2,R.id.tvTheme3 -> setBgCheckBox()
+           R.id.tvTheme0, R.id.tvTheme1, R.id.tvTheme2, R.id.tvTheme3 -> setBgCheckBox()
            R.id.btn_start -> {
                if (etName?.text!!.isEmpty()) {
                    Toast.makeText(this, "Enter a Name", Toast.LENGTH_SHORT).show()
@@ -80,10 +82,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
            }
        }
    }
-
+    //highlights boxes when selected
    private fun setBgCheckBox(){
-       val selected = ContextCompat.getDrawable(this,R.drawable.selected_option_border_bg)
-       val default = ContextCompat.getDrawable(this,R.drawable.default_option_border_bg)
+       val selected = ContextCompat.getDrawable(this, R.drawable.selected_option_border_bg)
+       val default = ContextCompat.getDrawable(this, R.drawable.default_option_border_bg)
        if (tvTheme0!!.isChecked){
            tvTheme0?.background = selected
        }else{

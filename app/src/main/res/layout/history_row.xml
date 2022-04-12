@@ -31,8 +31,12 @@
         android:layout_weight="1"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        tools:text="Email" />
-
+        tools:text="Score" />
+<ImageButton
+    android:id="@+id/ibDelete"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_baseline_delete_forever_24"/>
 
 
 

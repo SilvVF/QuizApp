@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".activitys.MainActivity"
     android:background="@drawable/ic_bg"
     android:gravity="center"
     android:orientation="vertical"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30sp"
         android:gravity="center"
-        android:text="Trivia Pak"
+        android:text="Network + Quiz"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -101,7 +101,7 @@
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:text="Gaming"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textColor="@color/green" />
 
         <CheckBox
@@ -112,8 +112,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Anime"
-            android:textSize="20sp"
+            android:text="Network+"
+            android:textSize="15sp"
             android:background="@drawable/default_option_border_bg"
             android:textColor="@color/anime_color"
             android:textStyle="bold"
@@ -122,7 +122,7 @@
     </LinearLayout>
 
     <LinearLayout
-
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
